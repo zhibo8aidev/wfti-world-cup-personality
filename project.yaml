@@ -9,6 +9,7 @@ source_inputs:
   - /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality/artifacts/source-prd/user-brief.md
   - /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality/artifacts/source-prd/question-bank.md
   - /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality/artifacts/source-prd/algorithm-and-persona.md
+  - /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality/artifacts/source-prd/design-direction.md
   existing_design: []
   existing_repo: []
 available_artifacts:
