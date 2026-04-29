@@ -1,16 +1,19 @@
 project_id: wfti-world-cup-personality
 title: WFTI - 世界杯球迷人格大鉴赏
 client_target: both
-current_stage: proposal_specs
-stage_status: in_progress
+current_stage: prd_review
+stage_status: waiting_review
 source_inputs:
   idea: 2026 世界杯赛期为直播吧打造一个 APP 内 WebView 承载的 H5 互动活动。用户完成 16 道题测试，生成世界杯球迷人格结果页与分享海报，目标提升活动参与、完成率、分享率和赛事内页日活。
-  existing_prd: []
+  existing_prd:
+  - /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality/artifacts/source-prd/user-brief.md
+  - /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality/artifacts/source-prd/question-bank.md
+  - /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality/artifacts/source-prd/algorithm-and-persona.md
   existing_design: []
   existing_repo: []
 available_artifacts:
-  proposal_md: false
-  specs_dir: false
+  proposal_md: true
+  specs_dir: true
   design_md: false
   react_native_mockups: false
   tasks_md: false
@@ -18,7 +21,8 @@ available_artifacts:
   backend_code: false
   test_report: false
   release_plan: false
-pending_reviews: []
+pending_reviews:
+- prd_review
 openspec_change_id: null
 react_native_mockups:
   status: null
@@ -28,8 +32,8 @@ repo_targets:
   client: /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality
   backend: /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality
 client_stack:
-  frontend: jetpack-compose
-  design_target: mobile-app
+  frontend: web-h5
+  design_target: mobile-web
 github:
   owner: zhibo8aidev
   repo: wfti-world-cup-personality
@@ -64,7 +68,7 @@ execution_policy:
     agent: codex
     method: acp_codex
     cwd: /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality
-    stack: jetpack-compose
+    stack: web-h5
     follows:
     - proposal.md
     - specs/
@@ -81,13 +85,12 @@ execution_policy:
     - design.md
     - tasks.md
 next_actions:
-- Generate or import proposal.md and specs/
+- Wait for explicit PRD/specs approval
 orchestration_mode: strong
 validation:
-  required_handoffs:
-  - product -> leader
+  required_handoffs: []
   required_runs: []
-  artifact_origin_verified: false
+  artifact_origin_verified: true
   last_validation_note: null
 last_decision:
   stage: null
@@ -95,3 +98,6 @@ last_decision:
   by: null
   at: null
   note: null
+delivery_scope:
+  frontend: true
+  backend: true
