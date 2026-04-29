@@ -16,14 +16,17 @@
     <!-- 1. Landing Page -->
     <div id="pageLanding" class="page">
       <div class="header-img">
-        <!-- Visual: Top header image placeholder -->
+        <!-- Visual: Real head image loaded via CSS background -->
       </div>
-      <div style="padding: 24px; text-align: center;">
+      <div style="padding: 32px 24px; text-align: center;">
         <h1>WFTI — 世界杯球迷人格大鉴赏</h1>
         <div class="slogan">你不是在看世界杯，你是在演你自己。</div>
-        <div style="background: white; border-radius: 16px; padding: 20px; margin-top: 24px; box-shadow: var(--shadow-card);">
-          <div style="font-size: 14px; color: var(--text-secondary);">
-            16 道题，3 分钟，测出你的世界杯球迷人格密码
+        
+        <!-- Glassmorphism Card for Intro -->
+        <div style="background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 20px; padding: 24px; margin-top: 16px; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: var(--shadow-card);">
+          <div style="font-size: 15px; color: var(--text-secondary); font-weight: 500; line-height: 1.6;">
+            16 道精选题，3 分钟深度剖析<br>
+            测出你的 <span style="color: var(--primary-color); font-weight: 700;">2026 世界杯</span> 球迷人格密码
           </div>
         </div>
       </div>
@@ -35,7 +38,7 @@
     <!-- 2. Question Page -->
     <div id="pageQuestion" class="page" style="display:none;">
       <div class="question-container">
-        <div id="questionNum" class="question-num">01 / 16</div>
+        <div id="questionNum" class="question-num">Q01 / 16</div>
         <div id="questionText" class="question-text">世界杯分组出来了，你支持的球队分到了「死亡之组」，你的第一反应是？</div>
         <div class="options" id="optionsContainer">
           <!-- Options will be injected by JS -->
@@ -46,7 +49,8 @@
     <!-- 3. Transition Page -->
     <div id="pageTransition" class="loading-screen">
       <div class="spinner"></div>
-      <div style="font-size: 16px; font-weight: 500; color: var(--text-secondary);">正在分析你的球迷DNA……</div>
+      <div style="font-size: 16px; font-weight: 600; color: white;">正在解析你的球迷基因...</div>
+      <div style="font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 8px;">正在匹配 2026 赛事向量...</div>
     </div>
 
     <!-- 4. Result Page -->
@@ -56,7 +60,8 @@
         <div id="resultName" class="personality-name">绿茵教父</div>
         
         <div class="illustration-box">
-          <div style="opacity: 0.3;">Illustration Placeholder</div>
+          <!-- Character illustration would go here -->
+          <div style="color: var(--primary-color); font-weight: 600; opacity: 0.5; font-size: 14px;">3D CHARACTER MOCKUP</div>
           <div class="tag-cloud">
             <span class="tag">#信仰不灭</span>
             <span class="tag">#孤勇者</span>
@@ -65,8 +70,11 @@
         </div>
 
         <div class="result-copy">
-          <div style="font-weight: 600; margin-bottom: 8px;">球迷人格解析</div>
-          <div id="resultDesc" style="font-size: 15px; color: var(--text-secondary);">
+          <div style="font-weight: 700; margin-bottom: 12px; font-size: 17px; display: flex; align-items: center; gap: 8px;">
+            <span style="width: 4px; height: 16px; background: var(--primary-color); border-radius: 2px;"></span>
+            球迷人格解析
+          </div>
+          <div id="resultDesc" style="font-size: 15px; color: var(--text-secondary); line-height: 1.7;">
             既然认准了这抹颜色，这辈子就跟它死磕到底了。信仰要是不滚烫，那和白开水有什么区别？热爱不需要理由，只需要这一腔跨越时空的孤勇。
           </div>
         </div>
@@ -75,43 +83,42 @@
           <div class="match-item">
             <div class="match-label">命定拍档</div>
             <div class="match-avatar"></div>
-            <div style="font-size: 12px;">熬夜圣体</div>
+            <div style="font-size: 13px; font-weight: 600;">熬夜圣体</div>
           </div>
-          <div class="match-item" style="border-left: 1px solid var(--card-border);">
+          <div class="match-item" style="border-left: 1px solid rgba(46, 125, 235, 0.1);">
             <div class="match-label">宿命天敌</div>
             <div class="match-avatar"></div>
-            <div style="font-size: 12px;">毒奶体质</div>
+            <div style="font-size: 13px; font-weight: 600;">毒奶体质</div>
           </div>
         </div>
 
-        <div style="padding-bottom: 120px; font-size: 12px; color: var(--text-light);">
+        <div style="padding-bottom: 140px; font-size: 13px; color: var(--text-light); font-weight: 500;">
           长按保存海报分享至朋友圈
         </div>
       </div>
 
-      <div class="fixed-bottom" style="flex-direction: column; gap: 12px;">
-        <div style="display: flex; gap: 12px; width: 100%; max-width: 320px;">
-          <button class="btn-primary" style="flex: 1; padding: 12px;" onclick="showPoster()">保存相册</button>
-          <button class="btn-primary" style="flex: 1; padding: 12px; background: white; color: var(--primary-color); border: 1px solid var(--primary-color); box-shadow: none;">分享名片</button>
+      <div class="fixed-bottom" style="flex-direction: column; gap: 12px; background: rgba(255,255,255,0.9); border-top: 1px solid #EEE;">
+        <div style="display: flex; gap: 12px; width: 100%; max-width: 340px;">
+          <button class="btn-primary" style="flex: 1.2;" onclick="showPoster()">保存相册</button>
+          <button class="btn-primary" style="flex: 1; background: white; color: var(--primary-color); border: 1.5px solid var(--primary-color); box-shadow: none;" onclick="location.reload()">重新测评</button>
         </div>
-        <div style="font-size: 13px; color: var(--primary-color); cursor: pointer;" onclick="location.reload()">重新预测</div>
       </div>
     </div>
 
     <!-- 5. Exception Pages -->
     <div id="pageException" class="exception-page">
-      <div id="exceptionIcon" style="font-size: 64px; margin-bottom: 24px;">📡</div>
-      <h2 id="exceptionTitle">网络开了小差</h2>
-      <div id="exceptionDesc" style="color: var(--text-secondary); margin-bottom: 32px;">请检查你的网络连接后重试</div>
+      <div id="exceptionIcon" style="font-size: 64px; margin-bottom: 24px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">📡</div>
+      <h2 id="exceptionTitle" style="margin-bottom: 8px;">网络开了小差</h2>
+      <div id="exceptionDesc" style="color: var(--text-secondary); margin-bottom: 32px; font-weight: 500;">请检查你的网络连接后重试</div>
       <button class="btn-primary" onclick="location.reload()">重新加载</button>
     </div>
 
     <!-- 6. Share Poster (Overlay) -->
-    <div id="posterOverlay" class="loading-screen" style="background: rgba(0,0,0,0.8);">
-      <div style="width: 80%; background: white; border-radius: 20px; padding: 20px; text-align: center;">
-         <div style="font-size: 14px; color: var(--text-light); margin-bottom: 10px;">海报预览</div>
-         <div style="background: #f0f0f0; height: 300px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-           Poster Canvas Output
+    <div id="posterOverlay" class="loading-screen" style="background: rgba(0,0,0,0.85); backdrop-filter: blur(5px);">
+      <div style="width: 85%; max-width: 360px; background: white; border-radius: 24px; padding: 24px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+         <div style="font-size: 15px; font-weight: 700; color: var(--text-main); margin-bottom: 16px;">海报预览</div>
+         <div style="background: linear-gradient(180deg, #F0F7FF 0%, #EBF5FF 100%); height: 380px; border-radius: 16px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; border: 1px solid #D1E9FF;">
+           <div style="color: var(--primary-color); font-weight: 600;">POSTER CANVAS OUTPUT</div>
          </div>
          <button class="btn-primary" style="width: 100%;" onclick="closePoster()">关闭</button>
       </div>
