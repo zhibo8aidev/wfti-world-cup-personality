@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>WFTI - 世界杯球迷人格大鉴赏</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Progress Bar (Only for questions) -->
+    <div id="progressBar" class="progress-bar" style="display:none;">
+      <div id="progressFill" class="progress-fill"></div>
+    </div>
+
+    <!-- 1. Landing Page -->
+    <div id="pageLanding" class="page">
+      <div class="header-img">
+        <!-- Visual: Top header image placeholder -->
+      </div>
+      <div style="padding: 24px; text-align: center;">
+        <h1>WFTI — 世界杯球迷人格大鉴赏</h1>
+        <div class="slogan">你不是在看世界杯，你是在演你自己。</div>
+        <div style="background: white; border-radius: 16px; padding: 20px; margin-top: 24px; box-shadow: var(--shadow-card);">
+          <div style="font-size: 14px; color: var(--text-secondary);">
+            16 道题，3 分钟，测出你的世界杯球迷人格密码
+          </div>
+        </div>
+      </div>
+      <div class="fixed-bottom">
+        <button class="btn-primary" onclick="startTest()">开始鉴赏</button>
+      </div>
+    </div>
+
+    <!-- 2. Question Page -->
+    <div id="pageQuestion" class="page" style="display:none;">
+      <div class="question-container">
+        <div id="questionNum" class="question-num">01 / 16</div>
+        <div id="questionText" class="question-text">世界杯分组出来了，你支持的球队分到了「死亡之组」，你的第一反应是？</div>
+        <div class="options" id="optionsContainer">
+          <!-- Options will be injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Transition Page -->
+    <div id="pageTransition" class="loading-screen">
+      <div class="spinner"></div>
+      <div style="font-size: 16px; font-weight: 500; color: var(--text-secondary);">正在分析你的球迷DNA……</div>
+    </div>
+
+    <!-- 4. Result Page -->
+    <div id="pageResult" class="page" style="display:none;">
+      <div class="result-page">
+        <div id="resultCode" class="personality-code">GOAT</div>
+        <div id="resultName" class="personality-name">绿茵教父</div>
+        
+        <div class="illustration-box">
+          <div style="opacity: 0.3;">Illustration Placeholder</div>
+          <div class="tag-cloud">
+            <span class="tag">#信仰不灭</span>
+            <span class="tag">#孤勇者</span>
+            <span class="tag">#战术大师</span>
+          </div>
+        </div>
+
+        <div class="result-copy">
+          <div style="font-weight: 600; margin-bottom: 8px;">球迷人格解析</div>
+          <div id="resultDesc" style="font-size: 15px; color: var(--text-secondary);">
+            既然认准了这抹颜色，这辈子就跟它死磕到底了。信仰要是不滚烫，那和白开水有什么区别？热爱不需要理由，只需要这一腔跨越时空的孤勇。
+          </div>
+        </div>
+
+        <div class="match-box">
+          <div class="match-item">
+            <div class="match-label">命定拍档</div>
+            <div class="match-avatar"></div>
+            <div style="font-size: 12px;">熬夜圣体</div>
+          </div>
+          <div class="match-item" style="border-left: 1px solid var(--card-border);">
+            <div class="match-label">宿命天敌</div>
+            <div class="match-avatar"></div>
+            <div style="font-size: 12px;">毒奶体质</div>
+          </div>
+        </div>
+
+        <div style="padding-bottom: 120px; font-size: 12px; color: var(--text-light);">
+          长按保存海报分享至朋友圈
+        </div>
+      </div>
+
+      <div class="fixed-bottom" style="flex-direction: column; gap: 12px;">
+        <div style="display: flex; gap: 12px; width: 100%; max-width: 320px;">
+          <button class="btn-primary" style="flex: 1; padding: 12px;" onclick="showPoster()">保存相册</button>
+          <button class="btn-primary" style="flex: 1; padding: 12px; background: white; color: var(--primary-color); border: 1px solid var(--primary-color); box-shadow: none;">分享名片</button>
+        </div>
+        <div style="font-size: 13px; color: var(--primary-color); cursor: pointer;" onclick="location.reload()">重新预测</div>
+      </div>
+    </div>
+
+    <!-- 5. Exception Pages -->
+    <div id="pageException" class="exception-page">
+      <div id="exceptionIcon" style="font-size: 64px; margin-bottom: 24px;">📡</div>
+      <h2 id="exceptionTitle">网络开了小差</h2>
+      <div id="exceptionDesc" style="color: var(--text-secondary); margin-bottom: 32px;">请检查你的网络连接后重试</div>
+      <button class="btn-primary" onclick="location.reload()">重新加载</button>
+    </div>
+
+    <!-- 6. Share Poster (Overlay) -->
+    <div id="posterOverlay" class="loading-screen" style="background: rgba(0,0,0,0.8);">
+      <div style="width: 80%; background: white; border-radius: 20px; padding: 20px; text-align: center;">
+         <div style="font-size: 14px; color: var(--text-light); margin-bottom: 10px;">海报预览</div>
+         <div style="background: #f0f0f0; height: 300px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+           Poster Canvas Output
+         </div>
+         <button class="btn-primary" style="width: 100%;" onclick="closePoster()">关闭</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
