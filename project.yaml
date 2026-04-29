@@ -1,0 +1,97 @@
+project_id: wfti-world-cup-personality
+title: WFTI - 世界杯球迷人格大鉴赏
+client_target: both
+current_stage: proposal_specs
+stage_status: in_progress
+source_inputs:
+  idea: 2026 世界杯赛期为直播吧打造一个 APP 内 WebView 承载的 H5 互动活动。用户完成 16 道题测试，生成世界杯球迷人格结果页与分享海报，目标提升活动参与、完成率、分享率和赛事内页日活。
+  existing_prd: []
+  existing_design: []
+  existing_repo: []
+available_artifacts:
+  proposal_md: false
+  specs_dir: false
+  design_md: false
+  react_native_mockups: false
+  tasks_md: false
+  client_code: false
+  backend_code: false
+  test_report: false
+  release_plan: false
+pending_reviews: []
+openspec_change_id: null
+react_native_mockups:
+  status: null
+  entry: null
+  files: []
+repo_targets:
+  client: /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality
+  backend: /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality
+client_stack:
+  frontend: jetpack-compose
+  design_target: mobile-app
+github:
+  owner: zhibo8aidev
+  repo: wfti-world-cup-personality
+  branch: main
+  private: false
+  auto_create_repo: true
+  auto_push: true
+  push_on_step: true
+  review_mode: github_links
+  repo_url: https://github.com/zhibo8aidev/wfti-world-cup-personality
+  clone_url: https://github.com/zhibo8aidev/wfti-world-cup-personality.git
+owners:
+  leader: leader
+  product: product
+  designer: designer
+  client: frontend
+  backend: backend
+  tester: tester
+  devops: devops
+execution_policy:
+  design:
+    runtime: acp
+    agent: gemini
+    method: acp_gemini
+    cwd: /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality
+    deliverables:
+    - design.md
+    - mobile_mockups
+    mockup_format: html
+  frontend:
+    runtime: acp
+    agent: codex
+    method: acp_codex
+    cwd: /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality
+    stack: jetpack-compose
+    follows:
+    - proposal.md
+    - specs/
+    - design.md
+    - tasks.md
+  backend:
+    runtime: acp
+    agent: codex
+    method: acp_codex
+    cwd: /home/chenhuiming/.openclaw/projects/wfti-world-cup-personality
+    follows:
+    - proposal.md
+    - specs/
+    - design.md
+    - tasks.md
+next_actions:
+- Generate or import proposal.md and specs/
+orchestration_mode: strong
+validation:
+  required_handoffs:
+  - product -> leader
+  required_runs: []
+  artifact_origin_verified: false
+  last_validation_note: null
+last_decision:
+  stage: null
+  decision: null
+  by: null
+  at: null
+  note: null
